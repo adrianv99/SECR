@@ -1,0 +1,73 @@
+body{
+    background: linear-gradient(132deg, rgb(227, 237, 255), #61acec);
+    background-size: 400% 400%;
+    animation: BackgroundGradient 30s ease infinite;
+}
+
+@keyframes BackgroundGradient{
+    0% {background-position: 0% 50%;}
+    50% {background-position: 100% 50%;}
+    100% {background-position: 0% 50%;}
+}
+
+#cab{
+    background: rgb(230, 57, 71);
+    color: white;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+    font-size: 59px; 
+    font-weight: bold;
+    position: relative;
+    bottom: 20px;
+    padding-bottom: 5px;
+    padding-top: 5px;
+}
+
+.main-section{
+    margin: 0 auto;
+    margin-top: 70px;
+    padding: 0;
+}
+
+.modal-content{
+    border-radius: 10px;
+    box-shadow: 10px 15px #888888;
+    padding: 10 20px;
+}
+
+input{
+    border-radius: 5px;
+}
+
+h1{
+    padding-bottom: 18px;
+    color: rgb(112, 112, 112);
+}
+
+#user{
+    padding-bottom: 13px; 
+    color: rgb(112, 112, 112);
+}
+
+#pass{
+    padding-bottom: 20px; 
+    color: rgb(112, 112, 112);
+    position: relative;
+    right: 18px;
+}
+
+#boton{
+    margin-bottom: 5px;
+    
+}
+
+#registrarse{
+    padding-bottom: 50px;
+    text-decoration-line: underline;
+}
+
+@media only screen and (max-width: 320px) {
+    #pass{
+        left: 0px;
+    }
+  }

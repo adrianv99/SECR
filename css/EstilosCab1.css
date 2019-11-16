@@ -1,0 +1,25 @@
+nav{
+    background: rgb(230, 57, 71);
+    color: white;
+}
+
+h1{
+    font-size: 45px; 
+    font-weight: bold;
+}
+
+li{
+    margin-right: 20px;
+}
+
+li :hover{
+    text-decoration-line: underline;
+}
+
+#botonesCrearSect{
+    padding-bottom: 99px;
+}
+
+#botonesCrearP{
+    padding-bottom: 150px;
+}
