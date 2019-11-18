@@ -22,6 +22,8 @@
         } 
         $estado = "A";
 
+       
+
 
         $sql="
         INSERT INTO `usuario`

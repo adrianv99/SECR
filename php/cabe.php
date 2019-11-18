@@ -12,12 +12,14 @@
   <meta name="description" content="">
   <meta name="author" content="">
   <title>Sistema Estadistico de la Cruz Roja</title>
+  <link rel="icon" type="image/jpg" href="img/logo.jpg" />
   <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="css/all.min.css"> 
   <link rel="stylesheet" href="css/Estilos_crear.css" >
   <link rel="stylesheet" href="css/EstilosCab1.css">
   <link rel="stylesheet" href="css/Estilos_Man.css">
   <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs4/dt-1.10.20/datatables.min.css"/>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
 </head>
 <body>
   <nav class="navbar navbar-expand-lg navbar-dark  static-top">
@@ -41,7 +43,7 @@
             <a class="nav-link" href="mantenimientos.php"><h5><i class="fas fa-tools"></i> Mantenimientos</h5></a>
           </li>
           <li class="nav-item active">
-            <a class="nav-link" href="#"><h5><i class="fas fa-sign-out-alt"></i> Salir</h5></a>
+            <a class="nav-link" href="InicioDeSesion.php"><h5><i class="fas fa-sign-out-alt"></i> Salir</h5></a>
           </li>
         </ul>
       </div>

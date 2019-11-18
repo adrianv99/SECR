@@ -52,7 +52,7 @@
                                 <td>
                                     <a href='provincia_modi.php?id=".$row['id_provincia']."' class='btn btn-sm' style='color: #5bc0de;' ><h4><i class='fas fa-pencil-alt'></i></h4> </a>
                                 </td>
-                                <td>
+                                <td>   
                                     <a href='php/procedimientos_provincia.php?accion=DLT&id=".$row['id_provincia']."' class='btn btn-sm' style='color: #d9534f;'><h4><i class='fas fa-trash-alt'></i></h4> </a>
                                 </td>
                             </tr>
