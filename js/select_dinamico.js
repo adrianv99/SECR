@@ -1,4 +1,4 @@
-/*$(document).ready(function(){
+$(document).ready(function(){
     $('#provincia_incidente').on('change', function(e) {
         let id = $('#provincia_incidente').val();
     $.ajax({
@@ -15,4 +15,4 @@
     })
 })
 
-*/
+
