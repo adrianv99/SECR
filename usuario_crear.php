@@ -25,13 +25,13 @@
          <div class="col-md-4 col-md-offset-2 col-sm-4 col-sm-offset-2 col-lg-4 col-lg-offset-2 col-xs-12 col-xs-offset-0">
             <div class="form-group">
                 <label for="" class="control-label">Nombre <span style="color:red">*</span> </label>
-                <input type="text" name="nombres" required="" placeholder="Nombre" class="form-control">
+                <input type="text" name="nombres" required="" placeholder="Nombre" class="form-control" autocomplete="off">
             </div>
          </div>
          <div class="col-md-4 col-md-offset-2 col-sm-4 col-sm-offset-2 col-lg-4 col-lg-offset-2 col-xs-12 col-xs-offset-0">
             <div class="form-group">
                 <label for="" class="control-label">Apellido <span style="color:red">*</span> </label>
-                <input type="text" name="apellidos" required="" placeholder="Apellido" class="form-control">
+                <input type="text" name="apellidos" required="" placeholder="Apellido" class="form-control" autocomplete="off">
             </div>
          </div>
         </div>
@@ -40,13 +40,13 @@
          <div class="col-md-4 col-md-offset-2 col-sm-4 col-sm-offset-2 col-lg-4 col-lg-offset-2 col-xs-12 col-xs-offset-0">
             <div class="form-group">
                 <label for="" class="control-label">Teléfono <span style="color:red">*</span> </label>
-                <input type="text" name="telefonos" required="" placeholder="Teléfono" class="form-control">
+                <input type="text" name="telefonos" required="" placeholder="Teléfono" class="form-control" autocomplete="off">
             </div>
          </div>
          <div class="col-md-4 col-md-offset-2 col-sm-4 col-sm-offset-2 col-lg-4 col-lg-offset-2 col-xs-12 col-xs-offset-0">
             <div class="form-group">
                 <label for="" class="control-label">Dirección <span style="color:red">*</span> </label>
-                <input type="text" name="direcciones" required="" placeholder="Dirección" class="form-control">
+                <input type="text" name="direcciones" required="" placeholder="Dirección" class="form-control" autocomplete="off">
             </div>
          </div>
         </div>
@@ -61,24 +61,18 @@
          <div class="col-md-4 col-md-offset-2 col-sm-4 col-sm-offset-2 col-lg-4 col-lg-offset-2 col-xs-12 col-xs-offset-0">
             <div class="form-group">
                 <label for="" class="control-label">Nombre de usuario <span style="color:red">*</span> </label>
-                <input type="text" name="usuarios" required="" placeholder="Nombre de usuario" class="form-control">
+                <input type="text" name="usuarios" required="" placeholder="Nombre de usuario" class="form-control" autocomplete="off">
             </div>
          </div>
         </div>
 
         <div class="row" id="fila">
-         <div class="col-md-4 col-md-offset-2 col-sm-4 col-sm-offset-2 col-lg-4 col-lg-offset-2 col-xs-12 col-xs-offset-0">
-            <div class="form-group">
-                <label for="" class="control-label">Contraseña <span style="color:red">*</span> </label>
-                <input type="text" name="contrasenas" required="" placeholder="Contraseña" class="form-control" id="contrasenas">
+            <div class="col-md-4 col-md-offset-2 col-sm-4 col-sm-offset-2 col-lg-4 col-lg-offset-2 col-xs-12 col-xs-offset-0">
+                <div class="form-group">
+                    <label for="" class="control-label">Contraseña <span style="color:red">*</span> </label>
+                    <input type="text" name="contrasenas" required="" placeholder="Contraseña" class="form-control" id="contrasenas" autocomplete="off">
+                </div>
             </div>
-         </div>
-         <div class="col-md-4 col-md-offset-2 col-sm-4 col-sm-offset-2 col-lg-4 col-lg-offset-2 col-xs-12 col-xs-offset-0">
-            <div class="form-group">
-                <label for="" class="control-label">Confirmar contraseña <span style="color:red">*</span> </label>
-                <input type="text" name="confirmar" required="" placeholder="Confirmar contraseña" class="form-control" id="confirmar">
-            </div>
-         </div>
         </div>
 
         <div class="row" id="fila">

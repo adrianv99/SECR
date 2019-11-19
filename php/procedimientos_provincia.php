@@ -9,7 +9,7 @@
         $statu='';
         $nombre=$_POST['provincias'];
         $estado = "A";
-
+        
 
         $sql="
         INSERT INTO `provincia`
@@ -28,7 +28,7 @@
             echo "error" .mysqli_error($mysqli);
         }
          echo("erro descripcion:" .mysqli_error($mysqli));
-        header("Location: ../provincia_mant.php?s=".$status);
+        header("Location: ../provincia_mant.php");
     }
 //======ACTUALIZAR================================================================================================
     $msj='';
@@ -59,10 +59,11 @@
             echo "error" .mysqli_error($mysqli);
         }
          echo("erro descripcion:" .mysqli_error($mysqli));
-        header("Location: ../provincia_mant.php?s=".$msj);
+         header("Location: ../provincia_mant.php?s=".$msj);
     }
 //========ELIMINAR==================================================================================================
     if($i=="DLT"){
+       
         $msj='';
         $codigo=$_GET['id'];
         $eliminar = "I";
@@ -79,10 +80,9 @@
             $status='errordlt';
             echo "error" .mysqli_error($mysqli);
         }
+        
         header("Location: ../provincia_mant.php?s=".$msj);
+        
     }
-
-
-
-
 ?>
+

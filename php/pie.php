@@ -1,4 +1,4 @@
-    
+
     <footer class="page-footer font-small" style="background: #494949; margin-top: 180px;">
         <div class="footer-copyright text-center py-2" style="color: #d2d1d1;">
          <h4> 
@@ -17,6 +17,7 @@
     <script type="text/javascript" src="js/table.js"></script>
     <script type="text/javascript" src="js/select_dinamico.js"></script>
     <script type="text/javascript" src="https://cdn.datatables.net/v/bs4/dt-1.10.20/datatables.min.js"></script>
+    <script type="text/javascript" src="js/alertas.js"></script>
 
     
     

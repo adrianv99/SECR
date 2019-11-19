@@ -28,7 +28,7 @@
             <div class="col-md-4 col-md-offset-2 col-sm-4 col-sm-offset-2 col-lg-4 col-lg-offset-2 col-xs-12 col-xs-offset-0">
                 <div class="form-group">
                     <label for="" class="control-label">Nombre del Incidente <span style="color:red">*</span> </label>
-                    <input type="text" name="incidentes" required="" placeholder="Incidente" class="form-control">
+                    <input type="text" name="incidentes" required="" placeholder="Incidente" class="form-control" autocomplete="off">
                 </div>
             </div>
         </div>

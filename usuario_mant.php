@@ -37,7 +37,6 @@
                         <th>Nombre</th>
                         <th>Apellido</th>
                         <th>Telefono</th>
-                        <th>Correo</th>
                         <th>Usuario</th>
                         <th>Estado</th>
                         <th></th>
@@ -46,6 +45,7 @@
                 </thead>
                 <tbody>
                     <?php
+
                         $query=consultar_usuarios();
                         while ($row=$query->fetch_assoc()){
                             echo"
@@ -54,7 +54,6 @@
                                 <td>".$row['nombre']."</td>
                                 <td>".$row['apellido']."</td>
                                 <td>".$row['telefono']."</td>
-                                <td>".$row['correo']."</td>
                                 <td>".$row['nombre_usuario']."</td>
                                 <td>".$row['estado']."</td>
                                 <td>
@@ -66,6 +65,7 @@
                             </tr>
                         ";
                         }
+                        
                     ?>
                     
                 </tbody>
