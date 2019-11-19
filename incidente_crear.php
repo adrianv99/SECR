@@ -59,7 +59,7 @@
                     <label for="" class="control-label">Municipio del Incidente <span style="color:red">*</span> </label>
                     <select class="form-control" id="municipio_pertenece" name="municipio_pertenece">
                         <?php
-                            $query=consultar_municipios_id_incidente();
+                            $query=consultar_municipios();
                             while ($row=$query->fetch_assoc()){
                                 echo"
                                 <option value='".$row['id_municipio']."' >".$row['nombre']."</option>
@@ -74,7 +74,7 @@
                     <label for="" class="control-label">Sector del Incidente <span style="color:red">*</span> </label>
                     <select class="form-control" name="sector_incidente">
                         <?php
-                            $query=consultar_join_sectores();
+                            $query=consultar_sectores();
                             while ($row=$query->fetch_assoc()){
                                 echo"
                                 <option value='".$row['id_sector']."' >".$row['nombre']."</option>
