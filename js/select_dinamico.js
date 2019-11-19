@@ -1,7 +1,6 @@
 /*$(document).ready(function(){
     $('#provincia_incidente').on('change', function(e) {
         let id = $('#provincia_incidente').val();
-        console.log(id);
     $.ajax({
         url: './php/select_dinamico.php',
         type: 'POST',
@@ -15,5 +14,5 @@
     })
     })
 })
-*/
 
+*/

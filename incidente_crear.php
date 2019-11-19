@@ -59,12 +59,13 @@
                     <label for="" class="control-label">Municipio del Incidente <span style="color:red">*</span> </label>
                     <select class="form-control" id="municipio_pertenece" name="municipio_pertenece">
                         <?php
-                            $query=consultar_municipios();
+                            
+                            /*$query=consultar_municipios();
                             while ($row=$query->fetch_assoc()){
                                 echo"
                                 <option value='".$row['id_municipio']."' >".$row['nombre']."</option>
                             ";
-                            }
+                            }*/
                         ?>
                     </select>
                 </div>
