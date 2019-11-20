@@ -18,7 +18,7 @@
 
     <div class="row">
         <div class="col-lg-12">
-            <h2 id="Titulo">Mantenimientos</h2>
+            <h2 id="Titulo">Incidentes</h2>
         </div>
     </div>
 

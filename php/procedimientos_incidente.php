@@ -7,11 +7,14 @@
 
 //=========INSERTAR=============================================================================================
     if($i=="INS"){
+        session_start();
         $statu='';
         $tipo_incidente=$_POST['incidente_tipo'];
         $id_sector=$_POST['sector_incidente'];
         $id_fecha=$_POST['fecha'];
         $estado="A";
+        $usuario = $_SESSION['username'];
+
 
 
         $sql="
@@ -19,11 +22,13 @@
         (
             `id_tipo_de_incidente`,
             `id_sector`,
+            `id_usuario`,
             `fecha`,
             `estado`
         ) VALUES ( 
             '$tipo_incidente',
             '$id_sector',
+            '$usuario',
             '$id_fecha',
             '$estado'
         )";

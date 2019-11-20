@@ -37,16 +37,9 @@
             <a class="nav-link" href="#"><h5><i class="fas fa-chart-bar"></i> Estadisticas</h5></a>
           </li>
           <li class="nav-item active">
-            <a class="nav-link" href="mantenimientos.php"><h5><i class="fas fa-tools"></i> Mantenimientos</h5></a>
-          </li>
-          <li class="nav-item active">
             <a class="nav-link" href="php/cerrar_sesion.php"><h5><i class="fas fa-sign-out-alt"></i> Salir</h5></a>
           </li>
         </ul>
       </div>
     </div>
   </nav>
-
- 
-  
- 
