@@ -40,8 +40,10 @@
                 <div class="form-group">
                     <label for="" class="control-label">Provincia del Incidente <span style="color:red">*</span> </label>
                     <select class="form-control" id="prov" name="provincia_incidente">
+                    <option value='0'>Elige una provincia</option>
                         <?php
                             $query=consultar_provincias();
+                            
                             while ($row=$query->fetch_assoc()){
                                 echo"
                                 <option value='".$row['id_provincia']."' >".$row['nombre']."</option>
@@ -64,13 +66,13 @@
          <div class="col-md-4 col-md-offset-2 col-sm-4 col-sm-offset-2 col-lg-4 col-lg-offset-2 col-xs-12 col-xs-offset-0">
          <div class="form-group">
                     <label for="" class="control-label">Sector del Incidente <span style="color:red">*</span> </label>
-                    <select class="form-control" name="sector_incidente">
+                    <select class="form-control" id="sector" name="sector_incidente">
                         <?php
                             $query=consultar_sectores();
                             while ($row=$query->fetch_assoc()){
-                                echo"
+                               /* echo"
                                 <option value='".$row['id_sector']."' >".$row['nombre']."</option>
-                            ";
+                            ";*/
                             }
                         ?>
                     </select>

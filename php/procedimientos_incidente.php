@@ -35,7 +35,7 @@
                 echo "error" .mysqli_error($mysqli);
             }
             echo("error descripcion:" .mysqli_error($mysqli));
-            header("Location: ../incidente_mant.php?s=".$status);
+            //header("Location: ../incidente_mant.php?s=".$status);
 
         }
 
