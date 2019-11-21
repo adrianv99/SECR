@@ -57,9 +57,9 @@ function consultar_municipios_id($id){
     return $result=$mysqli->query($sql);
 }
 
-function consultar_municipios_id_incidente(){
+function consultar_municipios_id_incidente($id){
     include('conexion.php');
-    $sql="SELECT * FROM municipio where id_provincia='$id_provincia'";
+    $sql="SELECT * FROM municipio where id_provincia='$id'";
     return $result=$mysqli->query($sql);
 }
 

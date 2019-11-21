@@ -39,7 +39,7 @@
          <div class="col-md-4 col-md-offset-2 col-sm-4 col-sm-offset-2 col-lg-4 col-lg-offset-2 col-xs-12 col-xs-offset-0">
                 <div class="form-group">
                     <label for="" class="control-label">Provincia del Incidente <span style="color:red">*</span> </label>
-                    <select class="form-control" id="provincia_incidente" name="provincia_incidente">
+                    <select class="form-control" id="prov" name="provincia_incidente">
                         <?php
                             $query=consultar_provincias();
                             while ($row=$query->fetch_assoc()){
@@ -57,16 +57,7 @@
          <div class="col-md-4 col-md-offset-2 col-sm-4 col-sm-offset-2 col-lg-4 col-lg-offset-2 col-xs-12 col-xs-offset-0">
                 <div class="form-group">
                     <label for="" class="control-label">Municipio del Incidente <span style="color:red">*</span> </label>
-                    <select class="form-control" id="municipio_pertenece" name="municipio_pertenece">
-                        <?php
-                            
-                            /*$query=consultar_municipios();
-                            while ($row=$query->fetch_assoc()){
-                                echo"
-                                <option value='".$row['id_municipio']."' >".$row['nombre']."</option>
-                            ";
-                            }*/
-                        ?>
+                    <select class="form-control" id="municipio" name="municipio_pertenece">                
                     </select>
                 </div>
          </div>
