@@ -31,10 +31,10 @@
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav ml-auto">
           <li class="nav-item active">
-            <a class="nav-link" href="#"><h5><i class="fas fa-home"></i> Inicio</h5></a>
+            <a class="nav-link" href="index.php"><h5><i class="fas fa-home"></i> Inicio</h5></a>
           </li>
           <li class="nav-item active">
-            <a class="nav-link" href="#"><h5><i class="fas fa-chart-bar"></i> Estadisticas</h5></a>
+            <a class="nav-link" href="estadisticas.php"><h5><i class="fas fa-chart-bar"></i> Estadisticas</h5></a>
           </li>
           <li class="nav-item active">
             <a class="nav-link" href="#"><h5><i class="fas fa-search"></i> Consultas</h5></a>

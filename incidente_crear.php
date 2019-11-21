@@ -19,7 +19,7 @@
             <h2 id="Titulo">Registrar Incidente</h2>
         </div>
     </div>
-    <form action="./php/procedimientos_incidente.php?accion=INS" method="POST">
+    <form action="./php/procedimientos_incidente.php?accion=INS" method="POST" onSubmit="return validarSector();">
        <div class="row" id="fila">
          <div class="col-md-4 col-md-offset-2 col-sm-4 col-sm-offset-2 col-lg-4 col-lg-offset-2 col-xs-12 col-xs-offset-0">
                 <div class="form-group">
