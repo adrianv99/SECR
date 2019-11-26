@@ -20,7 +20,7 @@
             <h2 id="Titulo">Registrar Incidente</h2>
         </div>
     </div>
-    <form action="./php/procedimientos_incidente.php?accion=INS" method="POST">
+    <form action="./php/procedimientos_incidente.php?accion=INS" method="POST" onSubmit="return validarSector();">
        <div class="row" id="fila">
          <div class="col-md-4 col-md-offset-2 col-sm-4 col-sm-offset-2 col-lg-4 col-lg-offset-2 col-xs-12 col-xs-offset-0">
                 <div class="form-group">
@@ -39,14 +39,16 @@
          </div>
 
          <div class="col-md-4 col-md-offset-2 col-sm-4 col-sm-offset-2 col-lg-4 col-lg-offset-2 col-xs-12 col-xs-offset-0">
-         <div class="form-group">
-                    <label for="" class="control-label">Sector del Incidente <span style="color:red">*</span> </label>
-                    <select class="form-control" name="sector_incidente">
+                <div class="form-group">
+                    <label for="" class="control-label">Provincia del Incidente <span style="color:red">*</span> </label>
+                    <select class="form-control" id="prov" name="provincia_incidente">
+                    <option value='0'>Elige una provincia</option>
                         <?php
-                            $query=consultar_sectores();
+                            $query=consultar_provincias();
+                            
                             while ($row=$query->fetch_assoc()){
                                 echo"
-                                <option value='".$row['id_sector']."' >".$row['nombre']."</option>
+                                <option value='".$row['id_provincia']."' >".$row['nombre']."</option>
                             ";
                             }
                         ?>
@@ -54,14 +56,32 @@
                 </div>
          </div>
         </div>
+
         <div class="row" id="fila">
          <div class="col-md-4 col-md-offset-2 col-sm-4 col-sm-offset-2 col-lg-4 col-lg-offset-2 col-xs-12 col-xs-offset-0">
                 <div class="form-group">
-                <div class="form-group">
-                
-            </div>
+                    <label for="" class="control-label">Municipio del Incidente <span style="color:red">*</span> </label>
+                    <select class="form-control" id="municipio" name="municipio_pertenece">                
+                    </select>
                 </div>
          </div>
+         <div class="col-md-4 col-md-offset-2 col-sm-4 col-sm-offset-2 col-lg-4 col-lg-offset-2 col-xs-12 col-xs-offset-0">
+         <div class="form-group">
+                    <label for="" class="control-label">Sector del Incidente <span style="color:red">*</span> </label>
+                    <select class="form-control" id="sector" name="sector_incidente">
+                        <?php
+                            $query=consultar_sectores();
+                            while ($row=$query->fetch_assoc()){
+                               /* echo"
+                                <option value='".$row['id_sector']."' >".$row['nombre']."</option>
+                            ";*/
+                            }
+                        ?>
+                    </select>
+                </div>
+         </div>
+        </div>
+        <div class="row" id="fila">
          <div class="col-md-4 col-md-offset-2 col-sm-4 col-sm-offset-2 col-lg-4 col-lg-offset-2 col-xs-12 col-xs-offset-0">
                 <div class="form-group">
                     <label for="" class="control-label">Fecha en que ocurrio el Incidente <span style="color:red">*</span> </label>

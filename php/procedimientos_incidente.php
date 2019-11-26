@@ -39,6 +39,8 @@
                 $status='error';
                 echo "error" .mysqli_error($mysqli);
             }
+            $_SESSION['message'] = 'Se ha guardado correctamente';
+            $_SESSION['message_type'] = 'success';
             echo("error descripcion:" .mysqli_error($mysqli));
             header("Location: ../incidente_mant.php?s=".$status);
 

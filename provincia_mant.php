@@ -64,7 +64,36 @@
      </table>
         </div>
     </div>
+    <?php if(isset($_SESSION['message'])){
+            if($_SESSION['message_type'] == "warning"){
+                echo("<script> Swal.fire({
+                    title: 'Seguro que desea borrar el registro?',
+                    icon: 'warning',
+                    showCancelButton: true,
+                    confirmButtonColor: '#3085d6',
+                    cancelButtonColor: '#d33',
+                    cancelButtonText: 'Eliminar',
+                    confirmButtonText: 'Cancelar'
+                  }).then((result) => {
+                    if (result.value) {
+                      window.location.href = 'php/procedimientos_provincia.php?accion=CANCEL';
+                    }
+                  }) </script>");
+            }
+            else{
+                echo("<script>
+                Swal.fire({
+                    icon: '".$_SESSION['message_type']."',
+                    title: '".$_SESSION['message']."',
+                    iconColor: '#3e8ef7',
+                    showConfirmButton: false,
+                    timer: 2500
+                })
+                </script>");
+            }
+      $_SESSION['message'] = null;
 
+    }?>
 
 
 

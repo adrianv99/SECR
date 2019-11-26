@@ -1,0 +1,22 @@
+#Titulo{
+    border-bottom: 3px solid rgb(230, 57, 71);
+    color: grey;
+    margin-top: 15px;
+    font-size: 35px;
+}
+
+#fila{
+    margin-top: 20px;
+}
+
+label{
+    color: rgb(119, 118, 118);
+}
+
+body{
+    background: rgb(250, 248, 248);
+}
+
+#botonGuardar{
+    margin-left: 15px;
+}

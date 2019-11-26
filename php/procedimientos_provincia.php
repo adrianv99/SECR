@@ -27,6 +27,8 @@
             $status='error';
             echo "error" .mysqli_error($mysqli);
         }
+        $_SESSION['message'] = 'Se ha guardado correctamente';
+        $_SESSION['message_type'] = 'success';
          echo("erro descripcion:" .mysqli_error($mysqli));
         header("Location: ../provincia_mant.php");
     }
@@ -58,6 +60,8 @@
             $status='errorudt';
             echo "error" .mysqli_error($mysqli);
         }
+        $_SESSION['message'] = 'Se ha guardado correctamente';
+        $_SESSION['message_type'] = 'success';
          echo("erro descripcion:" .mysqli_error($mysqli));
          header("Location: ../provincia_mant.php?s=".$msj);
     }
@@ -80,9 +84,35 @@
             $status='errordlt';
             echo "error" .mysqli_error($mysqli);
         }
-        
+        $_SESSION['message'] = 'Se ha eliminado un registro';
+        $_SESSION['message_type'] = 'warning';
+        $_SESSION['codigo'] = $codigo;
         header("Location: ../provincia_mant.php?s=".$msj);
         
     }
+
+//==========activar=====================================================================================
+if($i=="CANCEL"){
+    $msj='';
+    $codigo = $_SESSION['codigo'];
+    $eliminar = "A";
+    $sql="
+    UPDATE `provincia` SET
+        `estado`='$eliminar'
+    WHERE
+        id_provincia='$codigo'";
+
+    if($mysqli->query($sql)){
+        $status='successdlt';
+    }
+    else{
+        $status='errordlt';
+        echo "error" .mysqli_error($mysqli);
+    }
+    $_SESSION['message'] = 'Registro a salvo';
+    $_SESSION['message_type'] = 'success';
+    $_SESSION['codigo'] = NULL;
+    header("Location: ../provincia_mant.php?s=".$msj);
+}
 ?>
 

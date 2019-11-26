@@ -1,13 +1,12 @@
 <?php
-    include 'conexion.php';
     $i='';
     if(isset($_GET['accion'])){
         $i=$_GET['accion'];
     }
     $control=0;
     if($i == "VAL"){
-        include 'select.php';
         session_start();
+        include 'select.php';
         $nombre=$_POST['user_log'];
         $password=$_POST['password_log'];
         $validar=0;

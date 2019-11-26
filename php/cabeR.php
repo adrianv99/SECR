@@ -15,13 +15,14 @@
   <link rel="icon" type="image/jpg" href="img/logo.jpg" />
   <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="css/all.min.css"> 
-  <link rel="stylesheet" href="css/Estilos_crear.css" >
+  <link rel="stylesheet" href="css/Estilos_titulo.css" >
+  <link rel="stylesheet" href="css/Estilos_Pais.css" >
   <link rel="stylesheet" href="css/EstilosCab1.css">
   <link rel="stylesheet" href="css/Estilos_Man.css">
   <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs4/dt-1.10.20/datatables.min.css"/>
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
 </head>
-<body>
+<body style="background: white;">
   <nav class="navbar navbar-expand-lg navbar-dark  static-top">
     <div class="container">
       <a class="navbar-brand" href="inicio.php"><h1><i class="fas fa-ambulance"></i> SECR</h1></a>

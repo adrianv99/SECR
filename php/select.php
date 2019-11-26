@@ -39,7 +39,7 @@ function consultar_provincias(){
 }
 
 function consultar_provincias_id($id){
-    include('conexion.php');
+    include('conexion2.php');
     $sql="SELECT * FROM provincia where id_provincia='$id'";
     return $result=$mysqli->query($sql);
 }
@@ -129,4 +129,24 @@ function consultar_join_incidente(){
     ON municipio.id_provincia = provincia.id_provincia";
     return $result=$mysqli->query($sql);
 }
+
+//======================================================================================================================
+
+function incidentes_x_provincias_x_id($id){
+    include('conexion2.php');
+    $sql="SELECT COUNT(incidente.id_incidente) FROM incidente
+    INNER JOIN sector ON incidente.id_sector = sector.id_sector
+    INNER JOIN municipio ON sector.id_municipio = municipio.id_municipio
+    INNER JOIN provincia ON municipio.id_provincia = provincia.id_provincia
+    WHERE provincia.id_provincia='$id'";
+    return $result=$mysqli->query($sql);
+}
+
+
+function incidentes_total(){
+    include('conexion2.php');
+    $sql="SELECT COUNT(id_incidente) FROM incidente";
+    return $result=$mysqli->query($sql);
+}
+
 ?>
