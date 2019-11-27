@@ -2,6 +2,10 @@
     include './php/cabe.php';
 
 ?>
+
+<body>
+    
+
     <div class="container">
     <div class="row">
         <div class="col-lg-12" style="margin-top: 30px; color: grey; margin-bottom: 50px;">
@@ -117,51 +121,122 @@
             </div>
         </div>   
     </div>
-    <div class="row">
-        <div class="container" style="margin-top: 50px">
-            <div class="col-md-12">
-                <h4 style="font-size: 50px; height: 100px;">Frecuencia de incidentes por Mes</h4>
+    <div class="row" style= "background-color:#404040 ">
+        <div class="container" style="margin-top: 70px">
+            <div class="col-md-4 col-md-offset-4 col-sm-4 col-sm-offset-4 col-lg-12 col-lg-offset-4 col-xs-10 col-xs-offset-0">
+                <h4 style="font-size: 50px; height: 100px; text-align:center; color:white">Frecuencia de incidentes por Mes</h4>
             </div>
     </div>
-  <div class="container"style="margin-top: 70px ">
-    <div class="row">
-        <div class="col-md-6 col-md-offset-4 col-sm-6 col-sm-offset-4 col-lg-6 col-lg-offset-4 col-xs-12 col-xs-offset-0">
-                <div class="form-group" >
-                    <canvas id="lineChart" width="400" height="400"></canvas>
-                        <script>
-                        var ctx= document.getElementById("lineChart").getContext("2d");
-                        var lineChart= new Chart(ctx,{
-                            type:"line",
-                            data:{
-                                labels:[<?php echo cantidadxFecha(1)?>],
-                                datasets:[{
-                                        label:'Incidentes Registrados por Mes',
-                                        data:[<?php echo cantidadxFecha(2)?>],
-                                        backgroundColor: "rgba(255,0,0,0.4)",
-                                        borderColor:['rgba(255,0,0,0.9)']
-                                }]
-                            },
-                            options:{
-                                scales:{
-                                    yAxes:[{
-                                            ticks:{
-                                                beginAtZero:true
-                                            }
-                                    }]
-                                }
-                            }
-                        });
-                        </script>
-                </div>
-            </div>
-            <div class="col-md-6 col-md-offset-4 col-sm-6 col-sm-offset-4 col-lg-6 col-lg-offset-4 col-xs-12 col-xs-offset-0" style="margin-top: 200px ">
-                <h4>Este grafico muestra las cantidades de Incidentes que se han registrado agrupandolos por los meses del año, logrando asi observar de manera detallada que meses tienden a ser mas incidentados. </h4>
+  <div class="container"style="margin-top: 30px ">
+        <div class="row">
+        <div class="card-body">
+                  <div class="chart-wrapper">
+                        <div class="col-md-6 col-md-offset-6 col-sm-4 col-sm-offset-4 col-lg-12 col-lg-offset-12 col-xs-2 col-xs-offset-0">
+                                <div class="form-group" >
+                                    <canvas id="lineChart" width="800" height="400"></canvas>
+                                        <script>
+                                        Chart.defaults.global.defaultFontColor = "#000000"
+                                        var ctx= document.getElementById("lineChart").getContext("2d");
+                                        var lineChart= new Chart(ctx,{
+                                            type:"line",
+                                            data:{
+                                                labels:[<?php echo cantidadxFecha(1)?>],
+                                                datasets:[{
+                                                        label:'Incidentes Registrados por Mes',
+                                                        data:[<?php echo cantidadxFecha(2)?>],
+                                                        backgroundColor: "rgba(255,0,0,0.1)",
+                                                        borderColor:['rgba(255,0,0,0.9)']
+                                                }]
+                                            },
+                                            options: {
+                                                legend:{labels: {fontColor: 'white'}},
+                                                title: {
+                                                    },
+                                                    scales: {
+                                                        yAxes: [{
+                                                            ticks: {
+                                                                beginAtZero:true,
+                                                                fontColor: 'white'
+                                                            },
+                                                            gridLines: {
+                                                                color: "rgba(238,238,238,0.1)",
+                                                            } 
+                                                        }],
+                                                    xAxes: [{
+                                                            ticks: {
+                                                                fontColor: 'white'
+                                                            },
+                                                            gridLines: {
+                                                                color: "rgba(238,238,238,0.1)",
+                                                            } 
+                                                        }]
+                                                    } 
+                                                    
+                                                }
+                                        });
+                                        </script>
+                                </div>
+                        </div>
+                    </div>
+            </div>                       
+        </div>
+    </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12" style="margin-top: 25px; text-align:center; color:white">
+                <p class="center">Este grafico muestra las cantidades de Incidentes que se han registrado agrupandolos por los meses del año, logrando asi observar de manera detallada que meses tienden a ser mas incidentados. </p>
+                    </div>
             </div>
         </div>
-    <div class="col-md-6 col-md-offset-4 col-sm-6 col-sm-offset-4 col-lg-6 col-lg-offset-4 col-xs-12 col-xs-offset-0">
-    <div>
+
+</div>
+<div class="container"style="margin-top: 70px ">
+        <div class="row">
+            <div class="col-md-4 col-md-offset-4 col-sm-4 col-sm-offset-4 col-lg-12 col-lg-offset-4 col-xs-10 col-xs-offset-0">
+                    <div class="form-group" >
+                    <canvas id="barChart" width="400" height="400"></canvas>
+                    <script>
+                      var ctx= document.getElementById("barChart").getContext("2d");
+                      var barChart= new Chart(ctx,{
+                          type:"bar",
+                          data:{
+                              labels:[
+                                <?php echo cantidadxTipos(1)?>
+                              ],
+                              datasets:[{
+                                      label: 'Cantidad de incidentes',
+                                      data:[
+                                        <?php echo cantidadxTipos(2)?>
+                                      ],
+                                      backgroundColor: "rgba(255,0,0,0.7)",//version >2 useus background color
+                                      //strokeColor: "blue",
+                                      borderWidth: 1
+                              }]
+                          },
+                          options:{
+                              scales:{
+                                  yAxes:[{
+                                          ticks:{
+                                              beginAtZero:true
+                                          }
+                                  }]
+                              }
+                          }
+                      });
+                    </script>
+                    </div>
+            </div>
+
+        </div>
     </div>
-    </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12" style="margin-top: 25px; text-align:center; color:black">
+                <p class="center">Este grafico muestra las cantidades de Incidentes que se han registrado agrupandolos por los meses del año, logrando asi observar de manera detallada que meses tienden a ser mas incidentados. </p>
+                    </div>
+            </div>
+        </div>
+</body>
 <?php
     
     include 'php/pie.php';
