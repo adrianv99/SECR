@@ -22,6 +22,7 @@
   <link rel="stylesheet" href="css/Estilos_Man.css">
   <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs4/dt-1.10.20/datatables.min.css"/>
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.js"></script>
 </head>
 <body style="background: white;">
   <nav class="navbar navbar-expand-lg navbar-dark  static-top">

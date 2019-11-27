@@ -149,4 +149,55 @@ function incidentes_total(){
     return $result=$mysqli->query($sql);
 }
 
+//------------------------CHARTS-----------------------------------------------------
+
+ function cantidadxFecha($t){
+   include('conexion.php');
+    $date = '';
+    $data = '';
+    $sql="SELECT fecha,T.nombre, count(id_tipos_incidente) 
+    FROM incidente I 
+    INNER JOIN tipos_incidente T 
+    ON T.id_tipos_incidente = i.id_tipo_de_incidente
+    WHERE I.estado='A' 
+    GROUP BY YEAR(fecha),MONTH(fecha)";
+    $result=$mysqli->query($sql);
+    while ($row = mysqli_fetch_array($result)){
+    $date = $date . '"'. date('M, Y', strtotime($row['fecha'])).'",';
+    $data = $data . '"'. $row['count(id_tipos_incidente)'].'",';
+    }
+    $date = trim($date,",");
+    $data = trim($data,",");
+    if ($t == 2){
+        return $data;
+    }
+    if ($t == 1){
+        return $date;
+    }
+
+}
+
+function cantidadxTipos($t){
+    include('conexion.php');
+     $nombre = '';
+     $data = '';
+     $sql="SELECT T.nombre, count(id_tipo_de_incidente) 
+     FROM incidente I INNER JOIN tipos_incidente T 
+     ON T.id_tipos_incidente = i.id_tipo_de_incidente
+     WHERE I.estado='A' GROUP BY nombre";
+     $result=$mysqli->query($sql);
+     while ($row = mysqli_fetch_array($result)){
+     $nombre = $nombre . '"'. $row['nombre'].'",';
+     $data = $data . '"'. $row['count(id_tipo_de_incidente)'].'",';
+     }
+     $data = trim($data,",");
+     $nombre = trim($nombre,",");
+     if ($t == 2){
+         return $data;
+     }
+     if ($t == 1){
+         return $nombre;
+     }
+ 
+ }
 ?>

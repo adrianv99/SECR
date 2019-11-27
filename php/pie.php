@@ -16,10 +16,8 @@
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
     <script type="text/javascript" src="js/table.js"></script>
     <script type="text/javascript" src="js/select_ajax.js"></script>
-    <script type="text/javascript" src="js/validacion.js"></script>
+    <script type="text/javascript" src="js/alert.js"></script>
     <script type="text/javascript" src="https://cdn.datatables.net/v/bs4/dt-1.10.20/datatables.min.js"></script>
-    <script type="text/javascript" src="js/alertas.js"></script>
-
     
 
     

@@ -14,6 +14,7 @@
         $id_fecha=$_POST['fecha'];
         $estado="A";
         $usuario = $_SESSION['username'];
+        $diagnostico ="";
 
 
 
