@@ -39,7 +39,7 @@ function consultar_provincias(){
 }
 
 function consultar_provincias_id($id){
-    include('conexion2.php');
+    include('conexion.php');
     $sql="SELECT * FROM provincia where id_provincia='$id'";
     return $result=$mysqli->query($sql);
 }
@@ -99,7 +99,7 @@ function consultar_join_sectores(){
     return $result=$mysqli->query($sql);
 }
 
-//=================================================================================================================
+//===============================================INCIDENTES==============================================================
 
 function consultar_incidente(){
     include('conexion.php');
@@ -130,10 +130,16 @@ function consultar_join_incidente(){
     return $result=$mysqli->query($sql);
 }
 
+function consultar_diagnostico(){
+    include('conexion.php');
+    $sql="SELECT * FROM tipo_diagnostico";
+    return $result=$mysqli->query($sql);
+}
+
 //======================================================================================================================
 
 function incidentes_x_provincias_x_id($id){
-    include('conexion2.php');
+    include('conexion.php');
     $sql="SELECT COUNT(incidente.id_incidente) FROM incidente
     INNER JOIN sector ON incidente.id_sector = sector.id_sector
     INNER JOIN municipio ON sector.id_municipio = municipio.id_municipio
@@ -144,12 +150,12 @@ function incidentes_x_provincias_x_id($id){
 
 
 function incidentes_total(){
-    include('conexion2.php');
+    include('conexion.php');
     $sql="SELECT COUNT(id_incidente) FROM incidente";
     return $result=$mysqli->query($sql);
 }
 
-//------------------------CHARTS-----------------------------------------------------
+//=================================================CHARTS===============================================================
 
  function cantidadxFecha($t){
    include('conexion.php');
@@ -185,6 +191,27 @@ function cantidadxTipos($t){
      FROM incidente I INNER JOIN tipos_incidente T 
      ON T.id_tipos_incidente = i.id_tipo_de_incidente
      WHERE I.estado='A' GROUP BY nombre";
+     $result=$mysqli->query($sql);
+     while ($row = mysqli_fetch_array($result)){
+     $nombre = $nombre . '"'. $row['nombre'].'",';
+     $data = $data . '"'. $row['count(id_tipo_de_incidente)'].'",';
+     }
+     $data = trim($data,",");
+     $nombre = trim($nombre,",");
+     if ($t == 2){
+         return $data;
+     }
+     if ($t == 1){
+         return $nombre;
+     }
+ 
+ }
+
+ function cantidadxDiagnostico($t){
+    include('conexion.php');
+     $nombre = '';
+     $data = '';
+     $sql="SELECT T.nombre, count(id_tipo_de_incidente) FROM incidente I INNER JOIN tipo_diagnostico T ON T.id_diagnostico = i.id_diagnostico WHERE I.estado='A' GROUP BY t.nombre";
      $result=$mysqli->query($sql);
      while ($row = mysqli_fetch_array($result)){
      $nombre = $nombre . '"'. $row['nombre'].'",';

@@ -123,14 +123,22 @@
                           type:"pie",
                           data:{
                               labels:[
-                                <?php echo cantidadxTipos(1)?>
+                                <?php echo cantidadxDiagnostico(1)?>
                               ],
                               datasets:[{
                                       label:'Num datos',
                                       data:[
-                                        <?php echo cantidadxTipos(2)?>
+                                        <?php echo cantidadxDiagnostico(2)?>
                                       ],
-                                      backgroundColor:"rgba(255,0,0,0.8)"
+                                      backgroundColor:[
+                                                'rgba(51,51,255,0.6)',
+                                                'rgba(255,0,0,0.6)',
+                                                
+                                                'rgba(51,153,51,0.6)',
+                                                
+                                                'rgba(204,204,51,0.6)',
+                                                'rgba(85,85,85,0.6)'
+                                            ]
                               }]
                           },
                           options:{
