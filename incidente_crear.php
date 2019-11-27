@@ -87,18 +87,21 @@
                     <label for="" class="control-label">Fecha en que ocurrio el Incidente <span style="color:red">*</span> </label>
                     <input type="date" name="fecha" require="" placeholder="fecha" class="form-control"><span class="input-group-addon"><i class="glyphicon glyphicon-th"></i></span>
                 </div>
+ 
          </div>
          <div class="col-md-4 col-md-offset-2 col-sm-4 col-sm-offset-2 col-lg-4 col-lg-offset-2 col-xs-12 col-xs-offset-0">
          <div class="form-group">
                     <label for="" class="control-label">Diagnostico <span style="color:red">*</span> </label>
                     <select class="form-control" id="diagnostico" name="diagnostico">
                         <?php
+                        
                             $query=consultar_diagnostico();
                             while ($row=$query->fetch_assoc()){
                                echo"
                                 <option value='".$row['id_diagnostico']."' >".$row['nombre']."</option>
                             ";
                             }
+                        
                         ?>
                     </select>
                 </div>

@@ -3,11 +3,11 @@
 
 ?>
     <div class="container">
-        <div class="row" style="margin-top: 30px; color: grey; margin-bottom: 25px;">
-            <div class="center">
-                <h4 style="font-size: 50px;">Graficos y Estadisticas</h4>
-            </div>
+    <div class="row">
+        <div class="col-lg-12" style="margin-top: 30px; color: grey; margin-bottom: 50px;">
+            <h2 id="Titulo">Informes Estadisticos Oficiales</h2>
         </div>
+    </div>
         <div class="row" style="margin-top: 30px; color: grey; margin-bottom: 100px;">
             <div class="col-lg-6 col-sm-12">
                 <div style="background: #ff4c52; border-radius: 5px; width: 100%; height: 190px; box-shadow: 5px 8px #c5c2c2;">
@@ -16,7 +16,7 @@
                             <h4 style="text-align: center; color: white; font-size: 27px;">Provincia más incidentada</h4>
                         </div>
                     </div>
-                    <di class="row" style="margin-top: 15px;">
+                    <di class="row" style="margin-top: 8px;">
                         <div class="col-md-12">
                             <h5 style="text-align: center; color: white; font-size: 55px; font-weight: bold;">
                                 <?php 
@@ -28,7 +28,7 @@
                             </h5>
                         </div>
                     </di>
-                    <di class="row" style="margin-top: 15px;">
+                    <di class="row" style="margin-top: 8px;">
                         <div class="col-sm-6 col-md-12">
                             <h5 style="text-align: center; color: white; font-size: 29px;"><i class="fas fa-chart-pie"></i>   
                             <?php  
@@ -53,7 +53,7 @@
                                 <h4 style="text-align: center; color: white; font-size: 27px;">Provincia menos incidentada</h4>
                             </div>
                         </div>
-                        <di class="row" style="margin-top: 15px;">
+                        <di class="row" style="margin-top: 8px;">
                             <div class="col-md-12">
                                 <h5 style="text-align: center; color: white; font-size: 55px; font-weight: bold;">
                                     <?php 
@@ -65,7 +65,7 @@
                                 </h5>
                             </div>
                         </di>
-                        <di class="row" style="margin-top: 15px;">
+                        <di class="row" style="margin-top: 8px;">
                             <div class="col-sm-6 col-md-12">
                                 <h5 style="text-align: center; color: white; font-size: 29px;"><i class="fas fa-chart-pie"></i>   
                                     <?php  
@@ -104,50 +104,64 @@
             ?>
     </div>
     <div class="container">
-        <div class="row">
-            <div class="col-md-12 col-lg-12 col-sm-12">
-                <p style="font-size: 18px;"><img src="img/azul.png" alt="" height="15" width="18">  Provincias más incidentadas  </p>
+        <div class="col-sm-8 col-sm-8 col-sm-8">
+            <div class="row">
+                <div class="col-sm-6 col-sm-6 col-sm-6">
+                    <p style="font-size: 18px;"><img src="img/azul.png" alt="" height="15" width="18">  Provincias más incidentadas  </p>
+                </div>
+                <div class="col-sm-6 col-sm-6 col-sm-6">
+                    <div class="col-sm-12 col-sm-12 col-sm-12">
+                        <p style="font-size: 18px;"><img src="img/azulll.jpg" alt="" height="15" width="18">  Provincias menos incidentadas  </p>
+                    </div>
+                </div>
             </div>
-        </div>
-        <div class="row">
-            <div class="col-md-12 col-lg-12 col-sm-12">
-                <p style="font-size: 18px;"><img src="img/azulll.jpg" alt="" height="15" width="18">  Provincias menos incidentadas  </p>
-            </div>
-        </div>
+        </div>   
     </div>
-
-  <div class="container">
-    <div class="col-md-8 col-md-offset-4 col-sm-8 col-sm-offset-4 col-lg-8 col-lg-offset-4 col-xs-12 col-xs-offset-0">
-             <div class="form-group">
-                <canvas id="lineChart" width="400" height="400"></canvas>
-                      <script>
-                      var ctx= document.getElementById("lineChart").getContext("2d");
-                      var lineChart= new Chart(ctx,{
-                          type:"line",
-                          data:{
-                              labels:[<?php echo cantidadxFecha(1)?>],
-                              datasets:[{
-                                      label:'Incidentes Registrados por Mes',
-                                      data:[<?php echo cantidadxFecha(2)?>],
-                                      backgroundColor: "rgba(255,0,0,0.4)",
-                                      borderColor:['rgba(255,0,0,0.9)']
-                              }]
-                          },
-                          options:{
-                              scales:{
-                                  yAxes:[{
-                                          ticks:{
-                                              beginAtZero:true
-                                          }
-                                  }]
-                              }
-                          }
-                      });
-                      </script>
-              </div>
-           </div>
-          </div>
-
+    <div class="row">
+        <div class="container" style="margin-top: 50px">
+            <div class="col-md-12">
+                <h4 style="font-size: 50px; height: 100px;">Frecuencia de incidentes por Mes</h4>
+            </div>
+    </div>
+  <div class="container"style="margin-top: 70px ">
+    <div class="row">
+        <div class="col-md-6 col-md-offset-4 col-sm-6 col-sm-offset-4 col-lg-6 col-lg-offset-4 col-xs-12 col-xs-offset-0">
+                <div class="form-group" >
+                    <canvas id="lineChart" width="400" height="400"></canvas>
+                        <script>
+                        var ctx= document.getElementById("lineChart").getContext("2d");
+                        var lineChart= new Chart(ctx,{
+                            type:"line",
+                            data:{
+                                labels:[<?php echo cantidadxFecha(1)?>],
+                                datasets:[{
+                                        label:'Incidentes Registrados por Mes',
+                                        data:[<?php echo cantidadxFecha(2)?>],
+                                        backgroundColor: "rgba(255,0,0,0.4)",
+                                        borderColor:['rgba(255,0,0,0.9)']
+                                }]
+                            },
+                            options:{
+                                scales:{
+                                    yAxes:[{
+                                            ticks:{
+                                                beginAtZero:true
+                                            }
+                                    }]
+                                }
+                            }
+                        });
+                        </script>
+                </div>
+            </div>
+            <div class="col-md-6 col-md-offset-4 col-sm-6 col-sm-offset-4 col-lg-6 col-lg-offset-4 col-xs-12 col-xs-offset-0" style="margin-top: 200px ">
+                <h4>Este grafico muestra las cantidades de Incidentes que se han registrado agrupandolos por los meses del año, logrando asi observar de manera detallada que meses tienden a ser mas incidentados. </h4>
+            </div>
+        </div>
+    <div class="col-md-6 col-md-offset-4 col-sm-6 col-sm-offset-4 col-lg-6 col-lg-offset-4 col-xs-12 col-xs-offset-0">
+    <div>
+    </div>
+    </div>
 <?php
     
     include 'php/pie.php';
