@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.7.4
+-- version 4.9.1
 -- https://www.phpmyadmin.net/
 --
--- Servidor: 127.0.0.1
--- Tiempo de generación: 26-11-2019 a las 08:41:42
--- Versión del servidor: 10.1.30-MariaDB
--- Versión de PHP: 7.2.1
+-- Host: 127.0.0.1
+-- Generation Time: Nov 27, 2019 at 09:00 PM
+-- Server version: 10.4.8-MariaDB
+-- PHP Version: 7.1.33
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -19,39 +19,50 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de datos: `cr`
+-- Database: `cr`
 --
 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `incidente`
+-- Table structure for table `incidente`
 --
 
 CREATE TABLE `incidente` (
   `id_incidente` int(11) NOT NULL,
   `id_tipo_de_incidente` int(11) NOT NULL,
   `id_sector` int(11) NOT NULL,
+  `id_diagnostico` int(11) NOT NULL,
   `id_usuario` int(11) NOT NULL,
   `fecha` date NOT NULL,
   `estado` char(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Volcado de datos para la tabla `incidente`
+-- Dumping data for table `incidente`
 --
 
-INSERT INTO `incidente` (`id_incidente`, `id_tipo_de_incidente`, `id_sector`, `id_usuario`, `fecha`, `estado`) VALUES
-(1, 1, 1, 1, '2019-11-25', 'A'),
-(2, 2, 1, 1, '2019-11-25', 'A'),
-(3, 1, 4, 1, '2019-11-25', 'A'),
-(4, 2, 3, 1, '2019-11-25', 'A'),
-(5, 2, 3, 1, '2019-11-25', 'A');
+INSERT INTO `incidente` (`id_incidente`, `id_tipo_de_incidente`, `id_sector`, `id_diagnostico`, `id_usuario`, `fecha`, `estado`) VALUES
+(1, 1, 1, 0, 1, '2019-11-25', 'A'),
+(2, 2, 1, 0, 1, '2019-11-25', 'A'),
+(3, 1, 4, 0, 1, '2019-11-25', 'A'),
+(4, 2, 3, 0, 1, '2019-11-25', 'A'),
+(5, 2, 3, 0, 1, '2019-11-25', 'A'),
+(6, 1, 2, 0, 3, '2019-07-13', 'A'),
+(7, 2, 4, 0, 3, '2019-11-01', 'A'),
+(8, 1, 1, 0, 3, '2019-08-03', 'A'),
+(9, 2, 4, 0, 3, '2019-06-07', 'A'),
+(10, 2, 4, 0, 3, '2019-05-03', 'A'),
+(11, 3, 3, 4, 3, '2019-11-30', 'A'),
+(12, 1, 4, 2, 3, '2019-11-03', 'A'),
+(13, 3, 1, 3, 3, '2019-11-15', 'A'),
+(14, 2, 2, 5, 3, '2019-07-06', 'A'),
+(15, 1, 1, 1, 3, '2019-08-10', 'A');
 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `municipio`
+-- Table structure for table `municipio`
 --
 
 CREATE TABLE `municipio` (
@@ -62,7 +73,7 @@ CREATE TABLE `municipio` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Volcado de datos para la tabla `municipio`
+-- Dumping data for table `municipio`
 --
 
 INSERT INTO `municipio` (`id_municipio`, `nombre`, `id_provincia`, `estado`) VALUES
@@ -75,7 +86,7 @@ INSERT INTO `municipio` (`id_municipio`, `nombre`, `id_provincia`, `estado`) VAL
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `provincia`
+-- Table structure for table `provincia`
 --
 
 CREATE TABLE `provincia` (
@@ -85,7 +96,7 @@ CREATE TABLE `provincia` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Volcado de datos para la tabla `provincia`
+-- Dumping data for table `provincia`
 --
 
 INSERT INTO `provincia` (`id_provincia`, `nombre`, `estado`) VALUES
@@ -125,7 +136,7 @@ INSERT INTO `provincia` (`id_provincia`, `nombre`, `estado`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `sector`
+-- Table structure for table `sector`
 --
 
 CREATE TABLE `sector` (
@@ -136,7 +147,7 @@ CREATE TABLE `sector` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Volcado de datos para la tabla `sector`
+-- Dumping data for table `sector`
 --
 
 INSERT INTO `sector` (`id_sector`, `nombre`, `id_municipio`, `estado`) VALUES
@@ -148,7 +159,7 @@ INSERT INTO `sector` (`id_sector`, `nombre`, `id_municipio`, `estado`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `tipos_incidente`
+-- Table structure for table `tipos_incidente`
 --
 
 CREATE TABLE `tipos_incidente` (
@@ -159,7 +170,7 @@ CREATE TABLE `tipos_incidente` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Volcado de datos para la tabla `tipos_incidente`
+-- Dumping data for table `tipos_incidente`
 --
 
 INSERT INTO `tipos_incidente` (`id_tipos_incidente`, `nombre`, `descripcion`, `estado`) VALUES
@@ -170,7 +181,29 @@ INSERT INTO `tipos_incidente` (`id_tipos_incidente`, `nombre`, `descripcion`, `e
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `usuario`
+-- Table structure for table `tipo_diagnostico`
+--
+
+CREATE TABLE `tipo_diagnostico` (
+  `id_diagnostico` int(11) NOT NULL,
+  `nombre` varchar(40) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `tipo_diagnostico`
+--
+
+INSERT INTO `tipo_diagnostico` (`id_diagnostico`, `nombre`) VALUES
+(1, 'Sin daños'),
+(2, 'Heridas Leves '),
+(3, 'Heridas Graves'),
+(4, 'Fallecimiento'),
+(5, 'Daños Materiales');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `usuario`
 --
 
 CREATE TABLE `usuario` (
@@ -187,19 +220,20 @@ CREATE TABLE `usuario` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Volcado de datos para la tabla `usuario`
+-- Dumping data for table `usuario`
 --
 
 INSERT INTO `usuario` (`id_usuario`, `nombre`, `apellido`, `telefono`, `direccion`, `correo`, `nombre_usuario`, `contrasena`, `administrador`, `estado`) VALUES
 (1, 'admin', 'admin', '8095731234', 'La Vega', 'admin@gmail.com', 'admin', 'admin', 'ADM', 'I'),
-(2, 'Louis', 'Torres', '8092421122', 'La Vega', 'lou@gmail.com', 'regular', 'regular', 'REG', 'A');
+(2, 'Louis', 'Torres', '8092421122', 'La Vega', 'lou@gmail.com', 'regular', 'regular', 'REG', 'A'),
+(3, 'Samuel', 'Perez', '8294100568', 'Don Bosco', 'samuelprz2305@gmail.com', 'samprz', 'samu10', 'ADM', 'A');
 
 --
--- Índices para tablas volcadas
+-- Indexes for dumped tables
 --
 
 --
--- Indices de la tabla `incidente`
+-- Indexes for table `incidente`
 --
 ALTER TABLE `incidente`
   ADD PRIMARY KEY (`id_incidente`),
@@ -208,83 +242,95 @@ ALTER TABLE `incidente`
   ADD KEY `id_usuario` (`id_usuario`);
 
 --
--- Indices de la tabla `municipio`
+-- Indexes for table `municipio`
 --
 ALTER TABLE `municipio`
   ADD PRIMARY KEY (`id_municipio`),
   ADD KEY `id_provincia` (`id_provincia`);
 
 --
--- Indices de la tabla `provincia`
+-- Indexes for table `provincia`
 --
 ALTER TABLE `provincia`
   ADD PRIMARY KEY (`id_provincia`);
 
 --
--- Indices de la tabla `sector`
+-- Indexes for table `sector`
 --
 ALTER TABLE `sector`
   ADD PRIMARY KEY (`id_sector`),
   ADD KEY `id_municipio` (`id_municipio`);
 
 --
--- Indices de la tabla `tipos_incidente`
+-- Indexes for table `tipos_incidente`
 --
 ALTER TABLE `tipos_incidente`
   ADD PRIMARY KEY (`id_tipos_incidente`);
 
 --
--- Indices de la tabla `usuario`
+-- Indexes for table `tipo_diagnostico`
+--
+ALTER TABLE `tipo_diagnostico`
+  ADD PRIMARY KEY (`id_diagnostico`);
+
+--
+-- Indexes for table `usuario`
 --
 ALTER TABLE `usuario`
   ADD PRIMARY KEY (`id_usuario`);
 
 --
--- AUTO_INCREMENT de las tablas volcadas
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT de la tabla `incidente`
+-- AUTO_INCREMENT for table `incidente`
 --
 ALTER TABLE `incidente`
-  MODIFY `id_incidente` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id_incidente` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
--- AUTO_INCREMENT de la tabla `municipio`
+-- AUTO_INCREMENT for table `municipio`
 --
 ALTER TABLE `municipio`
   MODIFY `id_municipio` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
--- AUTO_INCREMENT de la tabla `provincia`
+-- AUTO_INCREMENT for table `provincia`
 --
 ALTER TABLE `provincia`
   MODIFY `id_provincia` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
 
 --
--- AUTO_INCREMENT de la tabla `sector`
+-- AUTO_INCREMENT for table `sector`
 --
 ALTER TABLE `sector`
   MODIFY `id_sector` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
--- AUTO_INCREMENT de la tabla `tipos_incidente`
+-- AUTO_INCREMENT for table `tipos_incidente`
 --
 ALTER TABLE `tipos_incidente`
   MODIFY `id_tipos_incidente` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- AUTO_INCREMENT de la tabla `usuario`
+-- AUTO_INCREMENT for table `tipo_diagnostico`
+--
+ALTER TABLE `tipo_diagnostico`
+  MODIFY `id_diagnostico` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
+-- AUTO_INCREMENT for table `usuario`
 --
 ALTER TABLE `usuario`
-  MODIFY `id_usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- Restricciones para tablas volcadas
+-- Constraints for dumped tables
 --
 
 --
--- Filtros para la tabla `incidente`
+-- Constraints for table `incidente`
 --
 ALTER TABLE `incidente`
   ADD CONSTRAINT `incidente_ibfk_1` FOREIGN KEY (`id_usuario`) REFERENCES `usuario` (`id_usuario`) ON DELETE CASCADE ON UPDATE CASCADE,
@@ -292,13 +338,13 @@ ALTER TABLE `incidente`
   ADD CONSTRAINT `incidente_ibfk_3` FOREIGN KEY (`id_sector`) REFERENCES `sector` (`id_sector`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Filtros para la tabla `municipio`
+-- Constraints for table `municipio`
 --
 ALTER TABLE `municipio`
   ADD CONSTRAINT `municipio_ibfk_1` FOREIGN KEY (`id_provincia`) REFERENCES `provincia` (`id_provincia`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Filtros para la tabla `sector`
+-- Constraints for table `sector`
 --
 ALTER TABLE `sector`
   ADD CONSTRAINT `sector_ibfk_1` FOREIGN KEY (`id_municipio`) REFERENCES `municipio` (`id_municipio`) ON DELETE CASCADE ON UPDATE CASCADE;
